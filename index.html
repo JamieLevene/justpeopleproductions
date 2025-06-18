@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Just People Productions</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <section class="hero">
+    <video class="grain-overlay" autoplay muted loop playsinline>
+      <source src="35mm.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-text">
+      <p class="tagline-small">HONEST STORIES. CREATIVE VISUALS. PEOPLE-DRIVEN.</p>
+      <h1>Just People Productions</h1>
+      <p class="description">
+        We’re a production company that loves to tell meaningful honest stories. We focus on people doing amazing things — founders, makers, artists, communities. We keep it small, stay curious, and tell stories the way they deserve to be told.
+      </p>
+      <div class="nav-buttons">
+        <a href="#work"><i class="fas fa-video"></i> Work</a>
+        <a href="#about"><i class="fas fa-user"></i> About</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+  </section>
+
+<section id="work" class="work-section">
+  <div class="work-grid">
+    <div class="work-item">
+      <div class="work-thumbnail">
+        <div class="hover-outline">
+          <img src="Screenshot 2025-02-13 at 11.39.17 AM.jpg" alt="Art of Peace" onclick="openModal('Art Of Peace V5.mp4')">
+          <div class="border-top"></div>
+          <div class="border-right"></div>
+        </div>
+        <div class="work-caption">
+          <h3>The Art of Peace</h3>
+          <p>DOCUMENTARY</p>
+        </div>
+      </div>
+    </div>
+    <div class="work-item">
+      <div class="work-thumbnail">
+        <div class="hover-outline">
+          <img src="Calidad.jpg" alt="Calidad Beer" onclick="openModal('Calidad VNew.mov')">
+          <div class="border-top"></div>
+          <div class="border-right"></div>
+        </div>
+        <div class="work-caption">
+          <h3>Calidad Beer</h3>
+          <p>COMMERCIAL</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  </section>
+
+  <section id="about" class="about-section">
+    <h2>About Us</h2>
+    <p>
+      We’re a small production company based in LA, and we make videos about real people doing cool things.
+      Whether it’s a brand, a startup, or just someone with a great story, we help bring that to life in a way
+      that feels natural and honest.<br><br>
+      Our work leans documentary-style — creative, people-focused, and a little off the beaten path.
+      We like keeping things simple, working closely with our clients, and making stuff that actually means something.
+    </p>
+  </section>
+
+  <section id="contact" class="contact-section">
+    <h2>Contact</h2>
+    <form class="contact-form">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+<div id="videoModal" class="modal" onclick="closeModal()">
+  <div class="modal-content">
+    <video id="modalVideo" controls autoplay></video>
+  </div>
+</div>
+
+  <script>
+    if (window.location.hash) {
+      history.replaceState(null, null, ' ');
+    }
+    window.onload = function () {
+      window.scrollTo(0, 0);
+    };
+
+    function openModal(src) {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      video.src = src;
+      modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      video.pause();
+      video.currentTime = 0;
+      modal.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
